@@ -1,0 +1,8 @@
+.fundoSobre {
+    background-image: url("https://ik.imagekit.io/m1iwfxqae/Projeto%20Integrador%202.jpeg?updatedAt=1740675966022");
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
