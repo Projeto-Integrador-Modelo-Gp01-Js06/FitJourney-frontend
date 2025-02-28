@@ -61,5 +61,5 @@ Se você deseja contribuir para o projeto, sinta-se à vontade para abrir um Pul
 
 📄 Licença
 Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
-=======
+
 
