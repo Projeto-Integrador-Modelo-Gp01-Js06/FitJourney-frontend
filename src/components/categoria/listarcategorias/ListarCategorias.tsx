@@ -27,7 +27,7 @@ function ListarCategorias() {
 
 	return (
 		<>
-			<div className="flex justify-center w-full my-4">
+			<div className="flex justify-center w-full my-4 bg-black">
 				<div className="container flex flex-col mx-4">
 					{ (!isLoading && categorias.length === 0) && (
 						<span className="my-8 text-3xl text-center">
