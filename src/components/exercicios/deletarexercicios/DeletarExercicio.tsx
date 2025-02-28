@@ -32,7 +32,7 @@ function DeletarExercicio() {
         setIsLoading(true)
     
         try {
-            await deletar(`/exercicios/${id}`)
+            await deletar(`/categorias/${id}`)
             alert('Exercicio apagado!')
             navigate("/exercicios") // Certifique-se de que a navegação está correta
         } catch (error) {

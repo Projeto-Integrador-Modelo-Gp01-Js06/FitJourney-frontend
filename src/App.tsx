@@ -64,7 +64,7 @@ function App() {
           <Route path="/cadastrarexercicio" element={<FormExercicio />} />
           <Route path="/editarexercicio/:id" element={<FormExercicio />} />
           <Route path="/exercicios" element={<ListarExercicios />} />
-          <Route path="/exercicios/deletar/:id" element={<DeletarExercicio />} />
+          <Route path="/deletarexercicios/:id" element={<DeletarExercicio />} />
           {/* Rota curinga para redirecionamento */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
