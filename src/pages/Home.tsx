@@ -17,7 +17,7 @@ import {
       <div className="relative h-screen w-full overflow-hidden">
         {/* GIF de fundo */}
         <img
-          src="/images/FitJourney.gif"
+           src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW04dTBwMWFtOWY2bHBnbmRpeHd3N2h2bzA2anpmdmh4a3AwbXNwaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3L0uR8mQ5K5qYdxyoT/giphy.gif"
           alt="GIF de fundo"
           className="absolute inset-0 object-cover z-[-1] h-full w-full"
         />

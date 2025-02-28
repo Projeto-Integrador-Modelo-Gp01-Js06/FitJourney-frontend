@@ -1,15 +1,14 @@
-
 function Contato() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-        <h1 className="text-3xl font-bold text-black mb-4">Entre em Contato</h1>
-        
-        <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-lg">
-          <p className="text-gray-700 text-center mb-4">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-black p-6">
+        <h1 className="text-3xl font-bold text-lime-400 mb-4">Entre em Contato</h1>
+
+        <div className="bg-black p-6 rounded-lg shadow-md w-full max-w-lg border border-lime-400">
+          <p className="text-lime-400 text-center mb-4">
             📍 Endereço: Rua das Academias, 123 - Centro, FitCity - FC 00000-000
           </p>
-          <p className="text-gray-700 text-center mb-6">
+          <p className="text-lime-400 text-center mb-6">
             📞 Telefone: (11) 98765-4321 | ✉️ Email: contato@fitjourney.com
           </p>
 
@@ -17,30 +16,29 @@ function Contato() {
             <input
               type="text"
               placeholder="Nome"
-              className="p-2 border border-gray-300 rounded"
+              className="p-2 border border-lime-400 rounded text-lime-400 bg-black"
               required
             />
             <input
               type="email"
               placeholder="Email"
-              className="p-2 border border-gray-300 rounded"
+              className="p-2 border border-lime-400 rounded text-lime-400 bg-black"
               required
             />
             <textarea
               placeholder="Sua mensagem"
-              className="p-2 border border-gray-300 rounded h-32"
+              className="p-2 border border-lime-400 rounded h-32 text-lime-400 bg-black focus:outline-none focus:ring-2 focus:ring-lime-400"
               required
             ></textarea>
             <button
               type="submit"
-              className="bg-[#d8ff57] text-black font-bold py-2 px-4 rounded hover:bg-white border border-black transition"
+              className="bg-lime-400 text-black font-bold py-2 px-4 rounded hover:bg-white border border-black transition"
             >
               Enviar
             </button>
           </form>
         </div>
       </div>
-      
     </>
   );
 }

@@ -4,6 +4,8 @@ import Categoria from "../../models/Categoria"
 import { RotatingLines } from "react-loader-spinner"
 import { atualizar, cadastrar, listar } from "../../../services/Service"
 import Exercicio from "../../models/Exercicio"
+import Navbar from "../../navbar/Navbar"
+import Footer from "../../footer/Footer"
 
 function FormExercicio() {
     const navigate = useNavigate()
@@ -124,8 +126,10 @@ function FormExercicio() {
     const carregandoCategoria = categoria.nome === ''
 
     return (
+        <>
         <div className="container flex flex-col items-center mx-auto bg-gray-950" >
-            <h1 className="my-8 text-4xl text-center text-lime-400 ">
+            <Navbar />
+            <h1 className="my-8 text-4xl font-bold text-center text-lime-400 ">
                 {id !== undefined
                     ? 'EDITAR EXERCICIO'
                     : 'CADASTRAR EXERCICIO'}
@@ -337,7 +341,10 @@ function FormExercicio() {
                     )}
                 </button>
             </form>
+            
         </div>
+        <Footer/>
+        </>
     )
 }
 
