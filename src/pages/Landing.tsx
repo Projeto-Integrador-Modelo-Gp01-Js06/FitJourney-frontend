@@ -19,8 +19,8 @@ const Landing = () => {
         <Link to="/cardio" className="text-center w-full sm:w-1/3">
           <h2 className="text-2xl font-bold">CARDIO</h2>
           <img
-            src="/images/cardio.jpg"
-            alt="Cardio GIF"
+          src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHdpcGprb3Y0YmZnYjE4d3pkYWh0eWNvMDhhcGZ1NXJlZ3NhamMwYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/e9Rst0YMFxGQZQWDx1/giphy.gif"
+          alt="Cardio GIF"
             className="rounded-lg w-full h-60 object-cover"
           />
         </Link>
@@ -28,7 +28,7 @@ const Landing = () => {
         <Link to="/musculacao" className="text-center w-full sm:w-1/3">
           <h2 className="text-2xl font-bold">MUSCULAÇÃO</h2>
           <img
-            src="/images/musculacao.jpg"
+            src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnZ4emtwM3RycHBoNDM4YW1hN2x1MXo4NW85dXZibzEweXRnaGd5ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/L6nqJALCMhglna5hwd/giphy.gif"
             alt="Musculação GIF"
             className="rounded-lg w-full h-60 object-cover"
           />
@@ -37,7 +37,7 @@ const Landing = () => {
         <Link to="/coletivas" className="text-center w-full sm:w-1/3">
           <h2 className="text-2xl font-bold">COLETIVAS</h2>
           <img
-            src="/images/coletivas.jpg"
+            src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGlmNmJuOWV6dHJqODF3YzA2ZW9nZHk0YXlzNmhhemd5cDdlbjFwZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/85BF8qzl3hNN8e2ksR/giphy.gif"
             alt="Coletivas GIF"
             className="rounded-lg w-full h-60 object-cover"
           />
@@ -48,10 +48,10 @@ const Landing = () => {
       <div className="flex justify-center gap-4 p-6">
         {/* Espaço do Aluno */}
         <Link
-          to="/home"
+          to="/exercicios"
           className="bg-lime-300 text-black p-2 rounded-lg font-bold w-1/4 text-center"
         >
-          ESPAÇO DO ALUNO →
+          EXERCICIOS →
         </Link>
 
         {/* Cadastrar Exercício */}

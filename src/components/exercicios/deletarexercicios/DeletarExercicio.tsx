@@ -30,18 +30,16 @@ function DeletarExercicio() {
 
     async function deletarExercicio() {
         setIsLoading(true)
-
+    
         try {
             await deletar(`/exercicios/${id}`)
-
             alert('Exercicio apagado!')
-
+            navigate("/exercicios") // Certifique-se de que a navegação está correta
         } catch (error) {
             alert('Erro ao apagar o exercicio')
         }
-
+    
         setIsLoading(false)
-        retornar()
     }
 
     function retornar() {

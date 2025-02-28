@@ -19,6 +19,7 @@ import DeletarCategoria from "./components/categoria/deletarcategorias/DeletarCa
 
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import DeletarExercicio from "./components/exercicios/deletarexercicios/DeletarExercicio";
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
             { path: "/sobre", element: <Sobre /> },
             { path: "/contato", element: <Contato /> }, // Adicionando Contato
             { path: "/cadastrarcategoria", element: <FormCategoria /> }
+
+            
           ].map(({ path, element }) => (
             <Route
               key={path}
@@ -61,7 +64,7 @@ function App() {
           <Route path="/cadastrarexercicio" element={<FormExercicio />} />
           <Route path="/editarexercicio/:id" element={<FormExercicio />} />
           <Route path="/exercicios" element={<ListarExercicios />} />
-          
+          <Route path="/exercicios/deletar/:id" element={<DeletarExercicio />} />
           {/* Rota curinga para redirecionamento */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
