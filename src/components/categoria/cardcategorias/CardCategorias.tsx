@@ -1,56 +1,28 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import Categoria from "../../../models/Categoria";
 
-const CadastrarCategoria = () => {
-  // Estado para armazenar o nome da categoria
-  const [categoriaNome, setCategoriaNome] = useState("");
+interface CardCategoriaProps {
+    categoria: Categoria
+  }
 
-  // Função de envio do formulário
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aqui você faria a lógica de envio da categoria (ex: para a API)
-    console.log("Categoria cadastrada:", categoriaNome);
-  };
+function CardCategorias({categoria}: CardCategoriaProps) {
+    return (
+        <div className="flex flex-col justify-between overflow-hidden border rounded-2xl my-10">
+            <header className="px-6 py-2 text-2xl font-bold text-lime-400 bg-black">Categoria</header>
+            <p className="h-full p-8 text-3xl bg-white">{categoria.nome}</p>
+            <div className="flex">
+                <Link to={`/editarcategoria/${categoria.id}`}
+                    className="flex items-center justify-center w-full py-2 bg-black border border-white text-slate-50 hover:bg-gray-600">
+                    <button>Editar</button>
+                </Link>
 
-  return (
-    <div className="bg-black text-lime-400 min-h-screen flex flex-col justify-between">
-      <div className="flex-1">
-        {/* Conteúdo do Formulário */}
-        <div className="text-center p-10">
-          <h1 className="text-4xl font-bold">FIT JOURNEY</h1>
-          <p className="text-lg">CADASTRAR NOVA CATEGORIA</p>
-        </div>
-
-        {/* Formulário de Cadastro de Categoria */}
-        <div className="flex justify-center">
-          <form
-            onSubmit={handleSubmit}
-            className="bg-white text-black p-8 rounded-lg w-1/3"
-          >
-            <div className="mb-4">
-              <label className="block text-lg font-bold mb-2" htmlFor="categoriaNome">
-                Nome da Categoria
-              </label>
-              <input
-                type="text"
-                id="categoriaNome"
-                value={categoriaNome}
-                onChange={(e) => setCategoriaNome(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-lg"
-                placeholder="Digite o nome da categoria"
-                required
-              />
+                <Link to={`/deletarcategoria/${categoria.id}`}
+                    className="flex items-center justify-center w-full bg-black border border-white text-slate-50 hover:bg-gray-600">
+                    <button>Deletar</button>
+                </Link>
             </div>
-            <button
-              type="submit"
-              className="bg-lime-300 text-black py-2 px-4 rounded-lg w-full font-bold"
-            >
-              CADASTRAR CATEGORIA
-            </button>
-          </form>
         </div>
-      </div>
-    </div>
-  );
-};
+    );
+}
 
-export default CadastrarCategoria;
+export default CardCategorias;
