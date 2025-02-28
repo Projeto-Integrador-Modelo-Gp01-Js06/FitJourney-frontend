@@ -5,7 +5,8 @@ import {
     InstagramLogo,
   } from "@phosphor-icons/react";
   import { motion } from "framer-motion";
-  import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
   
   function Home() {
     const textVariants = {
