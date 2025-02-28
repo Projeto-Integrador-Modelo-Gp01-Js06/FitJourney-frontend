@@ -12,7 +12,7 @@ Siga os passos abaixo para baixar o projeto e começar a rodá-lo em sua máquin
 Primeiro, você precisa clonar o repositório do GitHub. Abra o terminal e execute o comando:
 
 ```
-git clone https://github.com/Caaarolb/teste.git
+https://github.com/Projeto-Integrador-Modelo-Gp01-Js06/FitJourney-frontend.git
 ```
 
 2️⃣ Instalar as Dependências
