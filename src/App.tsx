@@ -40,6 +40,8 @@ function App() {
             { path: "/sobre", element: <Sobre /> },
             { path: "/contato", element: <Contato /> }, // Adicionando Contato
             { path: "/cadastrarcategoria", element: <FormCategoria /> }
+
+            
           ].map(({ path, element }) => (
             <Route
               key={path}

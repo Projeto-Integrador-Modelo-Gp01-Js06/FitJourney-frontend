@@ -1,56 +1,69 @@
-import { useState } from "react";
+import { Pencil, Trash } from "@phosphor-icons/react"
+import { Link } from "react-router-dom"
+import Exercicio from "../../models/Exercicio"
 
-const CadastrarCategoria = () => {
-  // Estado para armazenar o nome da categoria
-  const [categoriaNome, setCategoriaNome] = useState("");
+interface CardExercicioProps {
+    exercicio: Exercicio
+}
 
-  // Função de envio do formulário
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aqui você faria a lógica de envio da categoria (ex: para a API)
-    console.log("Categoria cadastrada:", categoriaNome);
-  };
-
-  return (
-    <div className="bg-black text-lime-400 min-h-screen flex flex-col justify-between">
-      <div className="flex-1">
-        {/* Conteúdo do Formulário */}
-        <div className="text-center p-10">
-          <h1 className="text-4xl font-bold">FIT JOURNEY</h1>
-          <p className="text-lg">CADASTRAR NOVA CATEGORIA</p>
-        </div>
-
-        {/* Formulário de Cadastro de Categoria */}
-        <div className="flex justify-center">
-          <form
-            onSubmit={handleSubmit}
-            className="bg-black text-black p-8 rounded-lg w-1/3"
-          >
-            <div className="mb-4">
-              <label className="block text-lg font-bold mb-2" htmlFor="categoriaNome">
-                Nome da Categoria
-              </label>
-              <input
-                type="text"
-                id="categoriaNome"
-                value={categoriaNome}
-                onChange={(e) => setCategoriaNome(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-lg"
-                placeholder="Digite o nome da categoria"
-                required
-              />
+function CardExercicios({ exercicio }: CardExercicioProps) {
+    return (
+        <div className="flex flex-col rounded-2xl justify-between bg-white border-1 text-black">
+            <div className="px-4 ">
+                <img
+                    src={exercicio.midia}
+                    className="mx-auto mt-1 w-full h-1/2 "
+                    alt={exercicio.nome}
+                />
+                <div className="flex flex-col">
+                    <p className="text-xl text-center uppercase py-2 font-bold">
+                        {exercicio.nome}
+                    </p>
+                    <p className="text-sm text-left ">
+                        Descrição: {exercicio.descricao}
+                    </p>
+                    <p className="text-sm text-left ">
+                        Tempo de Exercício: {exercicio.tempo}
+                    </p>
+                    <p className="text-sm text-left ">
+                        Série: {exercicio.serie}
+                    </p>
+                    <p className="text-sm text-left ">
+                        Repetições do Exercício: {exercicio.repeticoes}
+                    </p>
+                    <p className="text-sm text-left">
+                        Peso: {exercicio.peso}
+                    </p>
+                    <p className="text-sm text-left ">
+                        Tempo de descanso: {exercicio.descanso}
+                    </p>
+                    <p className="text-sm text-left ">
+                        Data: {new Date(exercicio.data).toLocaleDateString()}
+                    </p>
+                    <p className="text-s text-center  font-bold">
+                        Categoria: {exercicio.categoria?.nome}
+                    </p>
+                </div>
             </div>
-            <button
-              type="submit"
-              className="bg-lime-300 text-black py-2 px-4 rounded-lg w-full font-bold"
-            >
-              CADASTRAR CATEGORIA
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-};
 
-export default CadastrarCategoria;
+            <div className="flex items-end justify-around py-2 px-2 w-full rounded-b-2xl text-gray-950 bg-lime-400">
+                <Link to={`/editarexercicio/${exercicio.id}`}>
+                    <Pencil
+                        size={24}
+                        className="mr-1 hover:fill-teal-800"
+                    />
+                </Link>
+
+                <Link to={`/deletarexercicio/${exercicio.id}`}>
+                    <Trash
+                        size={24}
+                        className="mr-1 hover:fill-red-700"
+                    />
+                </Link>
+            </div>
+
+        </div>
+    )
+}
+
+export default CardExercicios

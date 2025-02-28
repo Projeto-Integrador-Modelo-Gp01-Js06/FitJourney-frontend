@@ -27,40 +27,43 @@ function ListarExercicios() {
 
     return (
         <>
-            {isLoading && (
-                <Oval
-                    color="#0D9488"
-                    height="80"
-                    width="80"
-                    visible={true}
-                    aria-label="oval-loading"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                />
-            )}
-            <div className="flex justify-center w-full my-4">
-                <div className="container flex flex-col mx-4">
-                    {!isLoading && exercicios.length === 0 && (
-                        <span className="my-8 text-3xl text-center">
-                            Nenhum exercicio foi encontrado
-                        </span>
-                    )}
+            <div className="bg-black pt-8 ">
+                {isLoading && (
+                    <div className="flex justify-center pt-8">
+                        <Oval
+                            color="#0D9488"
+                            height="80"
+                            width="80"
+                            visible={true}
+                            aria-label="oval-loading"
+                            wrapperStyle={{}}
+                            wrapperClass=""
+                        />
+                    </div>
+                )}
 
-                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
-                        {exercicios.map((exercicio) => (
-                            <CardExercicios
-                                key={exercicio.id}
-                                exercicio={exercicio}
-                            />
-                        ))}
+                <div className="flex justify-center w-0.8 m-8">
+                    <div className="container flex flex-col mx-4">
+                        {!isLoading && exercicios.length === 0 && (
+                            <span className="py-8 text-3xl text-center">
+                                Nenhum exercicio foi encontrado
+                            </span>
+                        )}
+
+                        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-4/5 gap-8 ">
+                            {exercicios.map((exercicio) => (
+                                <CardExercicios
+                                    key={exercicio.id}
+                                    exercicio={exercicio}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
+                <div className="flex justify-around max-h-screen p-4">
+                    <ModalExercicio />
+                </div>
             </div>
-
-            <div className="flex justify-around max-h-screen overflow-y-auto p-4">
-                <ModalExercicio />
-            </div>
-
         </>
     )
 }
